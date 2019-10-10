@@ -25,7 +25,7 @@ const getBabelLoader = config => {
 
 // Curried function that uses config to search for babel loader and pushes new plugin to options list.
 const addBabelPlugin = plugin => config => {
-  if(getBabelLoader(config).options && getBabelLoader(config).options.plugins){
+  if(getBabelLoader(config) && getBabelLoader(config).options && getBabelLoader(config).options.plugins){
     getBabelLoader(config).options.plugins.push(plugin);
   }
   return config;
